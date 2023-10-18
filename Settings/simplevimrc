@@ -1,0 +1,14 @@
+set number
+syntax on
+"colorscheme industry
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set expandtab
+set softtabstop=4
+set cursorline
+
+autocmd filetype cpp nnoremap <F5> :w <CR> :!g++ -std=c++14 -O2 -Wall % -o %:r && ./%:r<CR>
+
+autocmd filetype cpp nnoremap cpf i#include <bits/stdc++.h><Esc>ousing namespace std;<Esc>o<Esc>o#define debug(x) cerr << #x << " is " << x << endl<Esc>otypedef long long ll;<Esc>otypedef pair<int, int> P;<Esc>oconst int INF = 0x3f3f3f3f;<Esc>o<CR>int main()<Esc>o{<Esc>oios::sync_with_stdio(false);<Esc>ocin.tie(0);<Esc>o<CR>return 0;<Esc>o}<Esc>kki
+

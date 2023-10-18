@@ -1,0 +1,44 @@
+set number
+syntax on
+"colorscheme industry
+
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set expandtab
+set softtabstop=4
+set cursorline      " horizontally
+set cursorcolumn    " vertically
+
+autocmd filetype cpp nnoremap <F5> :w <CR> :!g++ -std=c++14 -O2 -Wall % -o %:r && ./%:r<CR>
+
+autocmd filetype cpp nnoremap cpf i#include <bits/stdc++.h><Esc>ousing namespace std;<Esc>o<Esc>o#define debug(x) cerr << #x << " is " << x << endl<Esc>otypedef long long ll;<Esc>otypedef pair<int, int> P;<Esc>oconst int INF = 0x3f3f3f3f;<Esc>o<CR>int main()<Esc>o{<Esc>oios::sync_with_stdio(false);<Esc>ocin.tie(0);<Esc>o<CR>return 0;<Esc>o}<Esc>kki
+
+filetype on         " type file detection
+filetype plugin on  " enable plugin
+filetype indent on  " detected file type
+
+set nobackup        " do not save backup files
+set scrolloff=10    " do not let cursor scroll below or above 10 lines
+set nowrap          " do not wrap lines
+set incsearch       " searching incrementally highlight matching characters as you type
+set ignorecase      " search ignore capital letters
+set smartcase       " override above allow you to search specifically for capital letters
+set showcmd         " Show partial command type in the last line of the screen
+set showmode        " Show the mode you are on the last line
+set showmatch       " Show matching words during a search.
+set hlsearch        " Use highlighting when doing a search
+set history=1000    " Set the commands to save in history default number is 20
+
+call plug#begin()
+
+Plug 'scrooloose/nerdtree'          " a tree explorer plugin for vim
+Plug 'valloric/youcompleteme'       " a code-completion engine for vim
+Plug 'vim-airline/vim-airline'      " lean & mean status/tabline for vim that's light as air
+
+call plug#end()
+
+autocmd VimEnter * NERDTree | wincmd p
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFocus<CR>
+let NERDTreeWinPos="right"

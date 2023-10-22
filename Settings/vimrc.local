@@ -35,10 +35,11 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'          " a tree explorer plugin for vim
 Plug 'valloric/youcompleteme'       " a code-completion engine for vim
 Plug 'vim-airline/vim-airline'      " lean & mean status/tabline for vim that's light as air
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 call plug#end()
 
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTreeFocus<CR>
 let NERDTreeWinPos="right"

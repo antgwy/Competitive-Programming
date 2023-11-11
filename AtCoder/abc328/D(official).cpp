@@ -10,13 +10,12 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    int n, f = 0; 
-    string s;
-    cin >> n >> s;
-    for (int i = 0; i < n - 1; ++i) {
-    	if (s.substr(i, 2) == "ab" || s.substr(i, 2) == "ba") { f = 1; break; }
+    string s, ans;
+    cin >> s;
+    for (auto c : s) {
+        ans += c;
+        if (ans.size() >= 3 && ans.substr(ans.size() - 3) == "ABC") ans.erase(ans.end() - 3, ans.end());
     }
-    if(f) cout << "Yes\n";
-    else cout << "No\n";
+    cout << ans << "\n";
     return 0;
 }

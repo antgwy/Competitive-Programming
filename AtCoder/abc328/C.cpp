@@ -10,13 +10,17 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    int n, f = 0; 
+    int n, q;
     string s;
-    cin >> n >> s;
+    cin >> n >> q >> s;
+    vector<int> sum(n + 1);
     for (int i = 0; i < n - 1; ++i) {
-    	if (s.substr(i, 2) == "ab" || s.substr(i, 2) == "ba") { f = 1; break; }
+        sum[i + 1] = sum[i] + (s[i] == s[i+1]);
     }
-    if(f) cout << "Yes\n";
-    else cout << "No\n";
+    while (q--) {
+        int l, r;
+        cin >> l >> r;
+        cout << sum[r-1] - sum[l-1] << "\n";
+    }
     return 0;
 }

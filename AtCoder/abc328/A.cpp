@@ -10,13 +10,14 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    int n, f = 0; 
-    string s;
-    cin >> n >> s;
-    for (int i = 0; i < n - 1; ++i) {
-    	if (s.substr(i, 2) == "ab" || s.substr(i, 2) == "ba") { f = 1; break; }
+    int n, m;
+    cin >> n >> m;
+    int res = 0;
+    for (int i = 1; i <= n; ++i) {
+        int x;
+        cin >> x;
+        if (x <= m) res += x;
     }
-    if(f) cout << "Yes\n";
-    else cout << "No\n";
+    cout << res << "\n";
     return 0;
 }

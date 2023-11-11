@@ -15,7 +15,7 @@ const int INF = 0x3f3f3f3f;
 
 int main()
 {
-	ios::sync_with_stdio(false);
+    ios::sync_with_stdio(false);
     cin.tie(0);
     int n;
     cin >> n;
@@ -35,5 +35,5 @@ int main()
         ans = max(ans, dp[i]/w - 1200.0/sqrt((double)i));
     }
     cout << fixed << setprecision(7) << ans << "\n";
-	return 0;
+    return 0;
 }

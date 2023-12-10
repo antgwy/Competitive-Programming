@@ -38,8 +38,6 @@ int main()
     int a, b, c, d;
     while (q--) {
         cin >> a >> b >> c >> d;
-        int x = (c - a + 1) / n;
-        int y = (d - b + 1) / n;
         ll ans = g(a, b, c + 1, d + 1);
         cout << ans << "\n";
     }

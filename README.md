@@ -13,6 +13,10 @@
 
 * 904div2
 
+## LeetCode
+
+[editorial](LeetCode/editorial.md)
+
 ## Settings
 
 ### vim

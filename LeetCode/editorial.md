@@ -1,4 +1,8 @@
 
+## [208. Implement Trie (Prefix Tree)](https://leetcode.cn/problems/implement-trie-prefix-tree/) (Medium)
+
+题意：实现 Trie 类模板（含插入字符串，查找字符串和前缀）。
+
 ## [421. Maximum XOR of Two Numbers in an Array](https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array/) (Medium)
 
 ## [2935. Maximum Strong Pair XOR II](https://leetcode.cn/problems/maximum-strong-pair-xor-ii/) (Hard)
@@ -22,5 +26,11 @@
 题意：对数组加减 1 至多 $k$ 次使众数频率最大，求这个频率。
 
 &emsp;&emsp;操作的数必定为排序后区间里的连续数，二分答案求滑动窗口的中位数判断。
+
+## [3093. Longest Common Suffix Queries](https://leetcode.cn/problems/longest-common-suffix-queries/) (Hard)
+
+题意：在 container 中找到与 query 有最长公共后缀的字符串。若有多个，选长度最短的，若一样选出现更早的。
+
+&emsp;&emsp;倒序字符串插入字典树，每个节点更新 {len, id} 键值对，倒序查询求解。
 
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

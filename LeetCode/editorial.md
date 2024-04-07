@@ -33,4 +33,10 @@
 
 &emsp;&emsp;倒序字符串插入字典树，每个节点更新 {len, id} 键值对，倒序查询求解。
 
+## [3108. Minimum Cost Walk in Weighted Graph](https://leetcode.cn/problems/minimum-cost-walk-in-weighted-graph/) (Hard)
+
+题意：带权无向图求路径与运算和最小值。
+
+&emsp;&emsp;对于同一个联通块，与运算越多越小，允许经过重复边，最优解是连通块内所有边与运算，并查集或 DFS 实现。
+
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

@@ -39,4 +39,28 @@
 
 &emsp;&emsp;对于同一个联通块，与运算越多越小，允许经过重复边，最优解是连通块内所有边与运算，并查集或 DFS 实现。
 
+## [3116. Kth Smallest Amount With Single Denomination Combination](https://leetcode.cn/problems/kth-smallest-amount-with-single-denomination-combination/)
+
+题意：使用无限量不同面额硬币组合（不能组合不同面额），求得到的第 $k$ 小金额。
+
+&emsp;&emsp;答案具有单调性，问题转化为可组合多少不超过 $m$ 的金额，容斥原理计数，如两种 $x$ 和 $y$ 组合出 $\lfloor\frac{m}{x}\rfloor+\lfloor\frac{m}{y}\rfloor-\lfloor\frac{m}{LCM(x,y)}\rfloor$ 个，然后二分答案。
+
+## [3117. Minimum Sum of Values by Dividing Array](https://leetcode.cn/problems/minimum-sum-of-values-by-dividing-array)
+
+题意：两个数组 nums(n) 和 andValues(m)，划分 nums 为 $m$ 个不相交连续子数组，子数组与和等于 andValues，求最小子数组值的和（值为数组最后一个元素）。
+
+&emsp;&emsp;记忆 DP，dfs(i, j, andv) 表示到 nums[i] 划分了 j 段，参与划分结果为 andv。
+
+## [3123. Find Edges in Shortest Paths](https://leetcode.cn/problems/find-edges-in-shortest-paths/) (Hard)
+
+题意：$n$ 个节点 $m$ 条边的无向带权图，返回每条边是否在某条 $0$ 到 $n-1$ 是最短路上的 boolean 数组。
+
+&emsp;&emsp;两遍 dijkstra 判断每条边能否达到最短路，也可以一遍 dijkstra+DFS/BFS 优化一下。
+
+## [3134. Find the Median of the Uniqueness Array](https://leetcode.cn/problems/find-the-median-of-the-uniqueness-array/) (Hard)
+
+题意：将数组所有子数组不同元素个数作为新元素组成新数组，求中位数。
+
+&emsp;&emsp;$\frac{n(n+1)}{2}$ 个子数组，答案具有单调性，二分答案滑动窗口判断。
+
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

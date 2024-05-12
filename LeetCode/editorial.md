@@ -39,13 +39,13 @@
 
 &emsp;&emsp;对于同一个联通块，与运算越多越小，允许经过重复边，最优解是连通块内所有边与运算，并查集或 DFS 实现。
 
-## [3116. Kth Smallest Amount With Single Denomination Combination](https://leetcode.cn/problems/kth-smallest-amount-with-single-denomination-combination/)
+## [3116. Kth Smallest Amount With Single Denomination Combination](https://leetcode.cn/problems/kth-smallest-amount-with-single-denomination-combination/) (Hard)
 
 题意：使用无限量不同面额硬币组合（不能组合不同面额），求得到的第 $k$ 小金额。
 
 &emsp;&emsp;答案具有单调性，问题转化为可组合多少不超过 $m$ 的金额，容斥原理计数，如两种 $x$ 和 $y$ 组合出 $\lfloor\frac{m}{x}\rfloor+\lfloor\frac{m}{y}\rfloor-\lfloor\frac{m}{LCM(x,y)}\rfloor$ 个，然后二分答案。
 
-## [3117. Minimum Sum of Values by Dividing Array](https://leetcode.cn/problems/minimum-sum-of-values-by-dividing-array)
+## [3117. Minimum Sum of Values by Dividing Array](https://leetcode.cn/problems/minimum-sum-of-values-by-dividing-array) (Hard)
 
 题意：两个数组 nums(n) 和 andValues(m)，划分 nums 为 $m$ 个不相交连续子数组，子数组与和等于 andValues，求最小子数组值的和（值为数组最后一个元素）。
 
@@ -62,5 +62,11 @@
 题意：将数组所有子数组不同元素个数作为新元素组成新数组，求中位数。
 
 &emsp;&emsp;$\frac{n(n+1)}{2}$ 个子数组，答案具有单调性，二分答案滑动窗口判断。
+
+## [3149. Find the Minimum Cost Array Permutation](https://leetcode.cn/problems/find-the-minimum-cost-array-permutation/) (Hard)
+
+题意：数组 a 和 p 是一个 $[0,\cdots,n-1]$ 排列，对于任意 p，求 $\displaystyle\min\sum_{i=0}^{n-1}|p[i]-a[p[(i+1)\%n]]|$。
+
+&emsp;&emsp;目标具有旋转不变性，逆向递推同时记录每个状态填的数，$dp[mask][i]=\min(dp[mask|2^j][j] + abs(i-a[j]))$，0 必然是第一个，每次递推含 0 则 mask 必为奇数。
 
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

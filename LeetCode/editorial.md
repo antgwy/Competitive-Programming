@@ -69,4 +69,10 @@
 
 &emsp;&emsp;目标具有旋转不变性，逆向递推同时记录每个状态填的数，$dp[mask][i]=\min(dp[mask|2^j][j] + abs(i-a[j]))$，0 必然是第一个，每次递推含 0 则 mask 必为奇数。
 
+## [3154. Find Number of Ways to Reach the K-th Stair](https://leetcode.cn/problems/find-number-of-ways-to-reach-the-k-th-stair/) (Hard)
+
+题意：每次走 -1（不能连续用）或 $i+2^j$（用后 j++），求从 1 到位置 k 的方案数。
+
+&emsp;&emsp;第二种操作 $i$ 次，考虑可能位置有 $(2^i-1)-(i+1)\le k-1\le(2^i-1)$，将第一次操作插入第二次中，插空法 $\sum_iC_{i+1}^{2^i-k}$， $O(\log k)$ 。也可以记忆化 DP。
+
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

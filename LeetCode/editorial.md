@@ -75,4 +75,10 @@
 
 &emsp;&emsp;第二种操作 $i$ 次，考虑可能位置有 $(2^i-1)-(i+1)\le k-1\le(2^i-1)$，将第一次操作插入第二次中，插空法 $\sum_iC_{i+1}^{2^i-k}$， $O(\log k)$ 。也可以记忆化 DP。
 
+## [3165. Maximum Sum of Subsequence With Non-adjacent Elements](https://leetcode.cn/problems/maximum-sum-of-subsequence-with-non-adjacent-elements/) (Hard)
+
+题意：单点修改，查询不包含相邻元素子序列最大和。
+
+&emsp;&emsp;线段树优化下 DP，需要记录的信息是第一个和最后一个数选不选。
+
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

@@ -19,7 +19,6 @@ void solve() {
     ll i, j, k;
     cin >> i >> j >> k;
     
-
     function<ll(ll, ll, ll)> calc = [&](ll i, ll j, ll k) -> ll {
         if (i > j) swap(i, j);
         if (k > j + 1 || k < j) return 0;

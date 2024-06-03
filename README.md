@@ -4,6 +4,8 @@
 CFTracker: https://cftracker.netlify.app/contests
 AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 
+[rating-converter](https://silverfoxxxy.github.io/rating-converter)
+
 ## AtCoder
 
 ### ABC
@@ -24,11 +26,13 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * abc353 (A-E)
 * abc354 (A-F)
 * abc355 (A-F)
+* abc356 (A-F)
 
 ### ARC
 
 * arc177 (A-D)
 * arc178 (A-C)
+* arc179 (A-B)
 
 ## Codeforces
 
@@ -43,6 +47,11 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * 942div2 (A-D1)
 * 945div2 (A-C)
 * 948div2 (A-C)
+* 949div2 (A-C)
+
+### Div. 1 + Div. 2
+
+* 947 (A-D)
 
 ### Div. 3
 
@@ -61,14 +70,11 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * edu160 (A-D)
 * edu164 (A-D)
 * edu165 (A-D)
+* edu166 (A-D)
 
 ### Global
 
 * Global Round 25 (A-D)
-
-### others
-
-* 947 (A-D)
 
 ## LeetCode
 
@@ -85,11 +91,11 @@ reference: [jiangly's code](https://github.com/beiyouwuyanzu/cf_code_jiangly), h
 ### vim
 
 ```bash
-sudo cp ./vimrc.local /etc/vim/vimrc.local
+cp ./vimrc.local /etc/vim/vimrc.local
 ```
 
 ### nvim
 
 ```bash
-sudo cp ./init.vim /home/wtyang/.config/nvim/init.vim
+cp ./init.vim /home/wtyang/.config/nvim/init.vim
 ```

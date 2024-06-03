@@ -1,9 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
 
-# 数学
+using ll = long long;
+#define debug(x) cerr << #x << " is " << x << endl
 
-## 取模数
-
-```cpp
 template<class T>
 constexpr T qpow(T a, ll b) {
     T res {1};
@@ -125,28 +125,41 @@ ll MInt<0>::Mod = 998244353;
 
 constexpr int P = 998244353;
 using Z = MInt<P>;
-```
 
-## 快速幂
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int m, n;
+    cin >> m >> n;
+    vector<int> x(m);
+    for (int i = 0; i < m; i++) {
+        cin >> x[i];
+        x[i]--;
+    }
 
-```cpp
-ll qpow(ll x, ll y, const ll &mod = MOD) {
-    ll ret = mod != 1;
-    for (x %= mod; y; y >>= 1, x = x * x % mod)
-        if (y & 1) ret = ret * x % mod;
-    return ret; 
+    vector<int> s(m);
+    for (int i = 0; i < m; i++) {
+        s[x[i]] |= 1 << i;
+    }
+
+    vector<Z> dp(1 << m);
+    dp[(1<<m)-1] = 1;
+
+    for (int i = 0; i < n; i++) {
+        vector<Z> ndp(1 << m);
+        for (int mask = 0; mask < (1 << m); mask++) {
+            for (int j = 0; j < m; j++) {
+                if (mask >> j & 1) {
+                    // 放 j 前必须放 x[j]
+                    int ns = (mask ^ (1 << j)) | s[j];
+                    ndp[ns] += dp[mask];
+                }
+            }
+        }
+        swap(dp, ndp);
+    }
+    Z ans = accumulate(dp.begin(), dp.end(), Z(0));
+    cout << ans << "\n";
+    return 0;
 }
-```
-
-## 组合数
-
-* 预处理
-
-```cpp
-ll C[M][M];
-for (int i = 0; i < M; i++) {
-    C[i][0] = C[i][i] = 1;
-    for (int j = 1; j < i; j++) 
-        C[i][j] = (C[i-1][j-1] + C[i-1][j]) % MOD;
-}
-```

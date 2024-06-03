@@ -81,4 +81,10 @@
 
 &emsp;&emsp;线段树优化下 DP，需要记录的信息是第一个和最后一个数选不选。
 
+## [3171. Find Subarray With Bitwise AND Closest to K](https://leetcode.cn/problems/find-subarray-with-bitwise-and-closest-to-k/) (Hard)
+
+题意：给定一个数组 `nums` 和一个整数 `k`，找到子数组与运算值与 `k` 绝对值差最小的值。
+
+&emsp;&emsp;法一：ST 表预处理与运算值。对于每个值二分查找第一个大于等于（如有）和小于等于（如有）的值更新答案。法二：遍历将与值加入集合来不断更新 (或对每个值不断将前面 `nums` 与运算更新直到不变)。
+
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

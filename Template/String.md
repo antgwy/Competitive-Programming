@@ -1,6 +1,52 @@
 
 # 字符串
 
+## 哈希
+
+* 双模哈希
+
+```cpp
+const int B[] = {131, 13331};
+const int P[] = {998244353, 1000000007};
+const int C = 2;
+struct Hash {
+    vector<int> h[C], pw[C];
+    Hash() {}
+    Hash(string s) {
+        int n = s.size();
+        init(s, n);
+    }
+    void init(string s, int n) {
+        for (int i = 0; i < C; i++) {
+            h[i].resize(n + 1);
+            pw[i].resize(n + 1);
+            h[i][0] = 1; pw[i][0] = 1;
+        }
+        for (int i = 0; i < C; i++) {
+            for (int j = 1; j <= n; j++) {
+                h[i][j] = (1ll * h[i][j-1] * B[i] + s[j-1]) % P[i];
+                pw[i][j] = 1ll * pw[i][j-1] * B[i] % P[i];
+            }
+        }
+    }
+    auto get(int l, int r) {
+        array<int, C> v{};
+        if (l > r) return v;
+        for (int i = 0; i < C; i++) {
+            v[i] = (h[i][r] - 1ll * h[i][l-1] * pw[i][r-l+1]) % P[i];
+            if (v[i] < 0) v[i] += P[i];
+        }
+        return v;
+    }
+    auto get(int l, int r, int d) {
+        auto v = get(l, r);
+        if (l > r) return v;
+        for (int i = 0; i < C; i++) v[i] = 1ll * v[i] * pw[i][d] % P[i];
+        return v;
+    }
+};
+```
+
 ## Manacher
 
 ## KMP

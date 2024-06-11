@@ -3,6 +3,14 @@
 
 题意：实现 Trie 类模板（含插入字符串，查找字符串和前缀）。
 
+## [312. Burst Balloons](https://leetcode.cn/problems/burst-balloons/)
+
+题意：删数，每次获得删除值和其他两个相邻值的乘机（边界则乘 1），求删完得到的最大值。
+
+&emsp;&emsp;考虑 $f(i,j)$ 为区间 $(i, j)$ 得到的最大值，通过枚举区间内 $k$ 作为最后移除数进行转移。
+
+$$f(i,j)=max_k\{f(i,k)+f(k,j)+nums[i]*nums[k]*nums[j]\}$$
+
 ## [421. Maximum XOR of Two Numbers in an Array](https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array/) (Medium)
 
 ## [2935. Maximum Strong Pair XOR II](https://leetcode.cn/problems/maximum-strong-pair-xor-ii/) (Hard)
@@ -86,5 +94,18 @@
 题意：给定一个数组 `nums` 和一个整数 `k`，找到子数组与运算值与 `k` 绝对值差最小的值。
 
 &emsp;&emsp;法一：ST 表预处理与运算值。对于每个值二分查找第一个大于等于（如有）和小于等于（如有）的值更新答案。法二：遍历将与值加入集合来不断更新 (或对每个值不断将前面 `nums` 与运算更新直到不变)。
+
+## [3181. Maximum Total Reward Using Operations II](https://leetcode.cn/problems/maximum-total-reward-using-operations-ii/) (Hard)
+
+题意：数组选数每次只能选大于已选总和，求能选到的最大总和。
+
+&emsp;&emsp;贪心最优策略是从小到大选取，因此可以先排序去重，$f(i,j)$ 表示考虑到第 $i$ 个，总和能否为 $j$，有
+
+$$\begin{cases}
+f(i,j+r_i) \leftarrow f(i-1,j) & \text{if}\  j<r_i \\
+f(i,j) \leftarrow f(i-1,j) & \text{otherwise}
+\end{cases}$$
+
+初始 $f(0,0)=\text{true}$，bitset 优化多个连续的 bool 值转成一个，复杂度 $O(\frac{nk}{w})$，其中 $w=32$ 或 $w=64$。
 
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

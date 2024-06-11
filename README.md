@@ -48,6 +48,7 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * 945div2 (A-C)
 * 948div2 (A-C)
 * 949div2 (A-C)
+* 951div2 (A-E)
 
 ### Div. 1 + Div. 2
 
@@ -59,6 +60,7 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * 929div3 (F)
 * 943div3 (G2)
 * 946div3 (A-E)
+* 950div3 (A-E)
 
 ### Div. 4
 
@@ -75,6 +77,7 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 ### Global
 
 * Global Round 25 (A-D)
+* Global Round 26 (A-D)
 
 ## LeetCode
 

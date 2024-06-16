@@ -1,9 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
 
-# 数学
+using ll = long long;
+#define debug(x) cerr << #x << " is " << x << endl
+typedef pair<int, int> pii;
+const int INF = 0x3f3f3f3f;
 
-## 取模数
-
-```cpp
 template<class T>
 constexpr T qpow(T a, ll b) {
     T res {1};
@@ -123,46 +125,17 @@ struct MInt {
 template<>
 ll MInt<0>::Mod = 998244353;
 
-constexpr int P = 998244353;
+constexpr ll P = 998244353;
 using Z = MInt<P>;
-```
 
-## 快速幂
-
-```cpp
-ll qpow(ll x, ll y, const ll &mod = MOD) {
-    ll ret = mod != 1;
-    for (x %= mod; y; y >>= 1, x = x * x % mod)
-        if (y & 1) ret = ret * x % mod;
-    return ret; 
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll n;
+    cin >> n;
+    Z a = n;
+    Z b = qpow(Z(10), to_string(n).size());
+    cout << a * (qpow(b, n) - 1) * (b - 1).inv() << "\n";
+    return 0;
 }
-```
-
-## 组合数
-
-
-* 结合取模数预处理阶乘及逆元
-
-```cpp
-vector<Z> fac(m + 1), invf(m + 1);
-fac[0] = 1;
-for (int i = 1; i <= m; i++) fac[i] = fac[i-1] * i;
-invf[m] = fac[m].inv();
-for (int i = m; i > 0; i--) invf[i-1] = invf[i] * i;
-
-auto binom = [&](int n, int m) {
-    if (m < 0 || n < m) return Z(0);
-    return fac[n] * invf[m] * invf[n-m];
-};
-```
-
-* 预处理
-
-```cpp
-ll C[M][M];
-for (int i = 0; i < M; i++) {
-    C[i][0] = C[i][i] = 1;
-    for (int j = 1; j < i; j++) 
-        C[i][j] = (C[i-1][j-1] + C[i-1][j]) % MOD;
-}
-```

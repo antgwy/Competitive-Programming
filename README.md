@@ -27,6 +27,8 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * abc354 (A-F)
 * abc355 (A-F)
 * abc356 (A-F)
+* abc357 (A-E)
+* abc358 (A-E)
 
 ### ARC
 
@@ -49,6 +51,7 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * 948div2 (A-C)
 * 949div2 (A-C)
 * 951div2 (A-E)
+* 953div2 (A-E)
 
 ### Div. 1 + Div. 2
 

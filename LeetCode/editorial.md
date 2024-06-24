@@ -108,4 +108,25 @@ f(i,j) \leftarrow f(i-1,j) & \text{otherwise}
 
 初始 $f(0,0)=\text{true}$，bitset 优化多个连续的 bool 值转成一个，复杂度 $O(\frac{nk}{w})$，其中 $w=32$ 或 $w=64$。
 
+
+## [3193. Count the Number of Inversions](https://leetcode.cn/problems/count-the-number-of-inversions/) (Hard)
+
+题意：二维数组 `req[i]=[end_i,cnt_i]`，求 `[0...n-1]` 排列 `p` 数目，满足 `p[0...end_i]` 恰好有 `cnt_i` 个逆序对。
+
+&emsp;&emsp;与 [LC 629](https://leetcode.cn/problems/k-inverse-pairs-array/) 类似，状态定义 $f(i,j)$ 表示从 $0$ 到 $i$ 的排列中恰有 $j$ 个逆序对排列数，假设选取 $k$，其余 $i-1$ 个比 $k$ 大的减一（只关心相对大小），希望能有 $j-(i-k)$ 个逆序对。
+
+$$f(i,j) = \sum_{k=0}^if(i-1,j-(i-k))=\sum_{k=0}^{i}f(i-1,j-k)$$
+
+考虑限制，$f(end_i,j\neq cnt_i) = 0$ 即可，对于本体直接计算的 $O(n^2m)$ 是满足的，前缀和优化如下。
+
+$$f(i,j)=f(i,j-1)+f(i-1,j)-f(i-1,j-i-1)$$
+
+若 `r = req[i-1]` 即 $i-1$ 存在要求，$f(i,j)=f(i-1,r), r \le j \le i + r$，其余为 0.
+
+## [3197. Find the Minimum Area to Cover All Ones II](https://leetcode.cn/problems/find-the-minimum-area-to-cover-all-ones-ii) (Hard)
+
+题意：二进制 grid，找 3 个不重叠矩形包含 grid 中所有 1。
+
+&emsp;&emsp;[abc347 F](https://atcoder.jp/contests/abc347/tasks/abc347_f) 的弱化版，比赛时写的分治转化到一个矩形找 1 个和一个矩形找 2 个的情形 $O((n+m)^3)$，3 个不重合 6 种切法直接写 $O(n^2m^2)$，处理 4 个角前缀和 $O(nm)$。
+
 ## [LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) (Hard)

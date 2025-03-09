@@ -30,6 +30,7 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * abc357 (A-E)
 * abc358 (A-E)
 * abc359 (A-E)
+* abc396 (A-F)
 
 ### ARC
 

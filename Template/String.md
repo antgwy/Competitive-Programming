@@ -49,7 +49,43 @@ struct Hash {
 
 ## Manacher
 
+```cpp
+vector<int> manacher(string s) {
+    string t = "#";
+    for (auto c : s) {
+        t += c;
+        t += '#';
+    }
+    int n = t.size();
+    vector<int> r(n);
+    for (int i = 1, j = 0; i < n; i++) {
+        if (2 * j - i >= 0 && j + r[j] > i) {
+            r[i] = min(r[2*j-i], j + r[j] - i);
+        }
+        while (i >= r[i] && i + r[i] < n && t[i-r[i]] == t[i+r[i]]) {
+            r[i] += 1;
+        }
+        if (i + r[i] > j + r[j]) j = i;
+    }
+    return r;
+}
+```
+
 ## KMP
+
+```cpp
+vector<int> kmp(string s) {
+    int n = s.size();
+    vector<int> f(n + 1);
+    for (int i = 1, j = 0; i < n; i++) {
+        while (j && s[i] != s[j]) j = f[j];
+        j += (s[i] == s[j]);
+        f[i+1] = j;
+    }
+    return f;
+}
+```
+
 
 * z 函数 (后缀与该字符串 LCP 长度, $O(n)$)
 

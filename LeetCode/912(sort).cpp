@@ -23,6 +23,20 @@ public:
         };
 
         quicksort(quicksort, nums, 0, (int)nums.size() - 1);
+
+        // if (nums.empty()) return nums;
+        // vector<pii> stk;
+        // stk.emplace_back(0, (int)nums.size() - 1);
+
+        // while (!stk.empty()) {
+        //     auto [left, right] = stk.back();
+        //     stk.pop_back();
+        //     if (left >= right) continue;
+        //     int pivot = partition(nums, left, right);
+        //     if (pivot + 1 < right) stk.emplace_back(pivot + 1, right);
+        //     if (left < pivot - 1) stk.emplace_back(left, pivot - 1);
+        // }
+
         return nums;
     }
 };

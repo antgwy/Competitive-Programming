@@ -55,6 +55,7 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 * 949div2 (A-C)
 * 951div2 (A-E)
 * 953div2 (A-E)
+* 1024div2 (A-D)
 
 ### Div. 1 + Div. 2
 
@@ -76,6 +77,7 @@ AtCoder Tracker: https://kenkoooo.com/atcoder/#/table/
 
 ### Educational
 
+* edu132 (E)
 * edu160 (A-D)
 * edu164 (A-D)
 * edu165 (A-D)

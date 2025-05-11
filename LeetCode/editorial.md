@@ -101,10 +101,8 @@ $$f(i,j)=max_k\{f(i,k)+f(k,j)+nums[i]*nums[k]*nums[j]\}$$
 
 &emsp;&emsp;贪心最优策略是从小到大选取，因此可以先排序去重，$f(i,j)$ 表示考虑到第 $i$ 个，总和能否为 $j$，有
 
-$$\begin{cases}
-f(i,j+r_i) \leftarrow f(i-1,j) & \text{if}\  j<r_i \\
-f(i,j) \leftarrow f(i-1,j) & \text{otherwise}
-\end{cases}$$
+$$\begin{cases} f(i,j+r_i) \leftarrow f(i-1,j) & \text{if}\  j<r_i \\
+f(i,j) \leftarrow f(i-1,j) & \text{otherwise} \end{cases}$$
 
 初始 $f(0,0)=\text{true}$，bitset 优化多个连续的 bool 值转成一个，复杂度 $O(\frac{nk}{w})$，其中 $w=32$ 或 $w=64$。
 
